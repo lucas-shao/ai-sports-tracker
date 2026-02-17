@@ -1,0 +1,8 @@
+{
+  "name": "AI Sports Tracker",
+  "description": "An AI-powered sports tracking application that uses voice and image recognition to log workouts and visualize progress.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
