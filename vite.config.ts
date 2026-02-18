@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [react()],
     define: {
-      'process.env.DEFAULT_USER_ID': JSON.stringify(env.DEFAULT_USER_ID || ''),
+      'process.env.DEFAULT_USER_ID': JSON.stringify(process.env.DEFAULT_USER_ID || env.DEFAULT_USER_ID || ''),
     },
     resolve: {
       alias: {
