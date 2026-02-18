@@ -5,9 +5,15 @@
         "moduleResolution": "node",
         "allowImportingTsExtensions": false,
         "noEmit": false,
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "rootDir": "."
     },
     "include": [
-        "**/*"
+        "**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }
