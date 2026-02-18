@@ -42,7 +42,11 @@ export interface RecordItem {
 
 export async function fetchUserProfile(userId: string): Promise<UserProfile> {
     const res = await fetch(`${API_BASE}/users/${userId}/profile`);
-    if (!res.ok) throw new Error(`Failed to fetch user profile: ${res.statusText}`);
+    if (!res.ok) {
+        let errMsg = `HTTP ${res.status}`;
+        try { const body = await res.json(); errMsg = body.error || JSON.stringify(body); } catch { }
+        throw new Error(`Failed to fetch user profile: ${errMsg}`);
+    }
     return res.json();
 }
 
