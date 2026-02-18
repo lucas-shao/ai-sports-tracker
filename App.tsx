@@ -439,7 +439,7 @@ const App: React.FC = () => {
                 setError(null);
             } catch (err: any) {
                 console.error('Failed to load user profile:', err);
-                setError('无法加载用户数据。请确认Supabase配置正确且已运行 npm run seed。');
+                setError(`无法加载用户数据: ${err.message}`);
             } finally {
                 setLoading(false);
             }
